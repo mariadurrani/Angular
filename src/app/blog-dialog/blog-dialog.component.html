@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Add New Blog</h1>
+<div mat-dialog-content>
+    <div class="row mt-2">
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input matInput [(ngModel)]="title" required>
+        </mat-form-field>
+    </div>
+
+    <div class="row mt-2">
+        <mat-form-field>
+            <mat-label>Thumbnail URL</mat-label>
+            <input matInput [(ngModel)]="thumbnailUrl" required>
+        </mat-form-field>
+    </div>
+    <div class="row mt-2">
+        <mat-form-field>
+            <mat-label>Body</mat-label>
+            <textarea matInput [(ngModel)]="body"></textarea>
+        </mat-form-field>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onSubmit()">Submit</button>
+</div>

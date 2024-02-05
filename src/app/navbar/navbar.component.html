@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+    <a mat-button routerLink="/">Main</a>
+    <span class="spacer"></span>
+
+    <a mat-button routerLink="/about">About Me</a>
+
+    <ng-container *ngIf="!isOwner">
+        <a mat-button routerLink="/main" (click)="userClick('owner')">Owner View</a>
+    </ng-container>
+
+    <ng-container *ngIf="isOwner">
+        <a mat-button routerLink="/main" (click)="userClick('user')">User View</a>
+    </ng-container>
+
+</mat-toolbar>

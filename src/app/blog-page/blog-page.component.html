@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row mt-3">
+
+        <div class="col-md-8">
+            <div *ngIf="post" class="offset-md-2">
+                <h1>{{ post.title }}</h1>
+                <div class="blog-posts">
+                    <img [src]="post.thumbnailUrl" alt="{{ post.title }}" class="img-fluid">
+                </div>
+                <p>{{ post.body }}</p>
+                <p>Likes: {{ post.likes }}</p>
+                <p>Dislikes: {{ post.dislikes }}</p>
+
+                <div class="row mb-2">
+                    <div class="col-md-1">
+                        <button (click)="likePost()" class="btn btn-success">Like</button>
+                    </div>
+                    &nbsp;
+                    <div class="col-md-1">
+                        <button (click)="dislikePost()" class="btn btn-danger">Dislike</button>
+                    </div>
+                </div>
+
+                <div *ngFor="let comment of post.comments" class="mt-2">
+                    <p>{{ comment }}</p>
+                </div>
+                <input class="form-control " [(ngModel)]="newComment" placeholder="Add a comment">
+
+                <button (click)="addComment()" class="btn btn-primary">Submit
+                    Comment</button>
+            </div>
+        </div>
+        <a routerLink="/main" class="btn btn-link mt-3">Back to Main Page</a>
+
+    </div>
+</div>

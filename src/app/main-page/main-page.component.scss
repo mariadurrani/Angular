@@ -1,0 +1,15 @@
+.blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.blog-post {
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.blog-post img {
+    width: 100%;
+    height: auto;
+}
